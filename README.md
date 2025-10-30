@@ -81,11 +81,13 @@ python S-AES/AES.py
 
 输入可以是8bit的数据和10bit的密钥，输出是8bit的密文：
 
-![BITFunction](README.assets/BITFunction.gif)
+![1](README.assets/1.png)
+
+![3](README.assets/3.png)
 
 当输出不符合标准时，返回处理失败的错误：
 
-![FalseFunction](README.assets/FalseFunction.gif)
+![2](README.assets/2.png)
 
 ##### 4.1.2 测试代码中测试
 
@@ -98,6 +100,7 @@ python S-AES/AES.py
 
 我们在该轮测试中与两个小组进行了交叉测试，验证了我们加密算法的正确性。
 
+![4](README.assets/4.png)
 
 我们在`/test/task2`文件夹中提供了与两个小组测试的jupyter notebook测试代码，可以直接打开task2测试文件夹中的[task2.ipynb文件](https://github.com/y-yyyt/S-AES/tree/main/test/task2/task2.ipynb)，即可看到测试结果。
 
@@ -106,15 +109,13 @@ python S-AES/AES.py
 > 考虑到向实用性扩展，加密算法的数据输入可以是ASII编码字符串(分组为1 Byte)，对应地输出也可以是ACII字符串(很可能是乱码)。
 > - 具体详细测试代码请看[task3测试文件夹](https://github.com/y-yyyt/S-AES/tree/main/test/task3)。
 
+
 ##### 4.3.1 GUI界面中测试
 
 处理ASCII输入：
 
-![ASCFunction](README.assets/ASCFunction.gif)
+![5](README.assets/5.png)
 
-当输入不符合标准时，返回处理失败的错误：
-
-![FalseFunction](README.assets/FalseFunction.gif)
 
 ##### 4.3.2 测试代码中测试
 
@@ -135,6 +136,10 @@ python S-AES/AES.py
 
 ##### 4.4.1 双重加密
 我们扩展了S-AES算法，实现了双重加密。尽管分组长度仍为16 bits，但我们通过两次加密的方式将理论密钥空间扩展到了32 bits的密钥长度，其中包含两个16 bits的子密钥。
+
+![6](README.assets/6.png)
+
+![7](README.assets/7.png)
 
 在我们建立加密类SAES的过程中,已经实现了多重加密的功能，定义在类方法中
 
@@ -190,6 +195,9 @@ triple_decrypted_plaintext = triple_saes.decrypt(triple_encrypted_ciphertext)
 基于S-AES算法，我们使用密码分组链(CBC)模式对较长的明文消息进行加密。特别注意到初始向量(16 bits)的生成是必要的，并需要在加解密双方之间共享。
 
 在CBC模式下，加密明文后尝试对密文分组进行替换或修改。解密后，比较篡改密文前后的结果，以观察篡改的影响。
+![8](README.assets/8.png)
+
+![9](README.assets/9.png)
 
 ##### 4.5.1 CBC工作模式的实现
 
@@ -232,6 +240,7 @@ triple_decrypted_plaintext = triple_saes.decrypt(triple_encrypted_ciphertext)
 #### 4.5.4 针对CBC的攻击
 
 尽管这种加密模式很好地隐藏了明文的统计特性，但是同样也暴露出了一个很严重的缺点: 可以通过CBC的加密特点改变明文内容，但是这种改变并不会引起其它明文块对应位的改变。这种攻击常用来绕过过滤器，提权（比如从guest变为admin）等。
+![10](README.assets/10.png)
 
 1. 字节反转攻击
 
