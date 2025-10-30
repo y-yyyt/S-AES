@@ -99,7 +99,7 @@ python python gui/AES.py
 我们在该轮测试中与两个小组进行了交叉测试，验证了我们加密算法的正确性。
 
 
-我们在`/testtask2`文件夹中提供了与两个小组测试的jupyter notebook测试代码，可以直接打开task2测试文件夹中的[task2.ipynb文件](https://github.com/y-yyyt/S-AES/tree/main/test/task2/task2.ipynb)，即可看到测试结果。
+我们在`/test/task2`文件夹中提供了与两个小组测试的jupyter notebook测试代码，可以直接打开task2测试文件夹中的[task2.ipynb文件](https://github.com/y-yyyt/S-AES/tree/main/test/task2/task2.ipynb)，即可看到测试结果。
 
 #### 4.3 第3关：扩展功能
 
