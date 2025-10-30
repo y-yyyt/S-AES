@@ -116,7 +116,6 @@ python S-AES/AES.py
 
 ![5](README.assets/5.png)
 
-
 ##### 4.3.2 测试代码中测试
 
 我们在`/test/task3`文件夹中提供了jupyter notebook的测试代码，可以直接打开task3测试文件夹中的[task3.ipynb文件](https://github.com/y-yyyt/S-AES/tree/main/test/task3/task3.ipynb)，即可看到测试结果。
@@ -240,6 +239,7 @@ triple_decrypted_plaintext = triple_saes.decrypt(triple_encrypted_ciphertext)
 #### 4.5.4 针对CBC的攻击
 
 尽管这种加密模式很好地隐藏了明文的统计特性，但是同样也暴露出了一个很严重的缺点: 可以通过CBC的加密特点改变明文内容，但是这种改变并不会引起其它明文块对应位的改变。这种攻击常用来绕过过滤器，提权（比如从guest变为admin）等。
+
 ![10](README.assets/10.png)
 
 1. 字节反转攻击
