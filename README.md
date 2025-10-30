@@ -67,7 +67,7 @@ pip install PyQt4
 
 - 使用 PyQt 界面（推荐用于更好的用户体验）
 ```shell
-python python gui/AES.py
+python S-AES/AES.py
 ```
 
 ### 4. 编程和测试要求
